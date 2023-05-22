@@ -2,39 +2,8 @@
 <html>
 <head>
     <title>图书管理系统登录</title>
-    <script>
-        // 将 JavaScript 代码放在这里
-        document.addEventListener('DOMContentLoaded', function() {
-            // 获取表单元素
-            var form = document.getElementById('loginForm');
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                var username = document.getElementById('username').value;
-                var password = document.getElementById('password').value;
-
-                // 发送登录请求
-                fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password)
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.error) {
-                            document.getElementById('error').textContent = data.error;
-                        } else {
-                            document.getElementById('error').textContent = '';
-                            alert('登录成功');
-                            // 在此处可以进行页面跳转或其他操作
-                        }
-                    })
-                    .catch(error => console.error('请求错误:', error));
-            });
-        });
-    </script>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <script src="../static/script.js"></script>
 </head>
 <body>
 <h1>图书管理系统登录</h1>
